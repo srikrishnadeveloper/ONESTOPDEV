@@ -1,70 +1,227 @@
-# Welcome to your Lovable project
+# OneStopDev - The Ultimate Developer Resource Hub
 
-## Project info
+OneStopDev is a comprehensive web development toolkit that provides developers with a centralized platform for various tools, utilities, AI assistance, and exclusive developer perks. Built with modern technologies, it serves as a "one-stop" solution for all your development needs.
 
-**URL**: https://lovable.dev/projects/53668ee9-3be7-442a-bb2e-46016c70ad97
+## 🚀 Features
 
-## How can I edit this code?
+### 🛠️ Web Development Tools
+- **CSS Generators**: Gradient, Border Radius, Box Shadow, Text Shadow generators
+- **Layout Tools**: Flexbox Playground, CSS Grid Generator, CSS Positioning tools
+- **Code Formatters**: JSON, CSS, HTML, JavaScript formatters and validators
+- **Text Utilities**: Case converters, Base64 encoder/decoder, Markdown preview
+- **Generators**: UUID generator, Lorem Ipsum, Meta tag generator, SVG wave generator
+- **Image Tools**: Image compressor with quality control
+- **Developer Utilities**: Regex tester, HTTP status code reference, Scrollbar customizer
 
-There are several ways of editing your application.
+### 🤖 AI Hub
+- Curated directory of AI tools and services across multiple categories
+- AI-powered chatbot for code assistance and explanations
+- Integration with Google Gemini for intelligent responses
+- Code generation and debugging assistance
 
-**Use Lovable**
+### 🔑 API Management
+- **API Directory**: Comprehensive list of developer APIs with documentation
+- **API Vault**: Secure storage for API keys and tokens (authenticated users)
+- **API Request Tester**: Built-in tool for testing API endpoints
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/53668ee9-3be7-442a-bb2e-46016c70ad97) and start prompting.
+### 🎁 Developer Perks
+- Exclusive discounts and freebies for developers
+- Free credits for various developer services
+- Educational resources and learning materials
 
-Changes made via Lovable will be committed automatically to this repo.
+### 👤 User Features
+- GitHub OAuth authentication
+- Personal profile management
+- Secure API key storage
+- Chat history preservation
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **Routing**: React Router
+- **State Management**: TanStack Query (React Query)
+- **Authentication**: Supabase Auth with GitHub OAuth
+- **Database**: Supabase (PostgreSQL)
+- **Code Highlighting**: Prism.js via react-syntax-highlighter
+- **Markdown Processing**: ReactMarkdown with remark-gfm
+- **Icons**: Lucide React
+- **Notifications**: Custom toast system
+- **Linting**: ESLint with TypeScript support
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── ui/              # Reusable UI components (shadcn/ui)
+│   ├── layouts/         # Layout components
+│   └── WebToolCard.tsx  # Tool card component
+├── pages/               # Route components/pages
+│   ├── AiHub.tsx       # AI tools directory
+│   ├── ApiVault.tsx    # API key management
+│   ├── DevPerks.tsx    # Developer perks
+│   └── [tools]/        # Individual tool pages
+├── hooks/               # Custom React hooks
+│   ├── useAuth.ts      # Authentication hook
+│   ├── useSearch.ts    # Search functionality
+│   ├── useDebounce.ts  # Debounced input hook
+│   └── useGeminiChat.ts # AI chat integration
+├── data/                # Static data and configurations
+│   ├── webToolsData.ts # Web development tools data
+│   ├── aiToolsData.ts  # AI tools database
+│   ├── apisData.ts     # API directory data
+│   └── perksData.ts    # Developer perks data
+├── lib/                 # Utility functions
+│   ├── utils.ts        # General utilities
+│   └── supabase.ts     # Supabase configuration
+└── layouts/             # Page layouts
+    └── MainLayout.tsx   # Main application layout
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- Node.js (v18 or higher)
+- npm, yarn, pnpm, or bun
+- Supabase account (for authentication and database)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Installation
 
-## What technologies are used for this project?
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/onestopdevsk.git
+   cd onestopdevsk
+   ```
 
-This project is built with .
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Environment Setup**
+   
+   Create a `.env.local` file in the root directory:
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_GEMINI_API_KEY=your_gemini_api_key
+   ```
 
-## How can I deploy this project?
+4. **Supabase Setup**
+   
+   Set up your Supabase project:
+   - Create a new project at [supabase.com](https://supabase.com)
+   - Enable GitHub OAuth in Authentication settings
+   - Create necessary tables for API vault functionality
 
-Simply open [Lovable](https://lovable.dev/projects/53668ee9-3be7-442a-bb2e-46016c70ad97) and click on Share -> Publish.
+5. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
-## I want to use a custom domain - is that possible?
+6. **Open your browser**
+   
+   Navigate to `http://localhost:5173` to see the application.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
-# ONESTOPDEV
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🎨 Key Features in Detail
+
+### Web Tools
+Each tool provides:
+- Real-time preview and code generation
+- Copy-to-clipboard functionality
+- Export capabilities (SVG, CSS, etc.)
+- Responsive design for mobile and desktop
+- Syntax highlighting for generated code
+
+### AI Assistant
+- Powered by Google Gemini
+- Streaming responses for real-time interaction
+- Code explanation and debugging assistance
+- Context-aware responses based on developer tools
+- Chat history for authenticated users
+
+### Search Functionality
+- Global search across all tools and resources
+- Fuzzy search with category filtering
+- Tag-based filtering system
+- Debounced input for optimal performance
+
+### Responsive Design
+- Mobile-first approach
+- Adaptive layouts using Tailwind CSS
+- Collapsible sidebar navigation
+- Touch-friendly interface
+
+## 🔐 Authentication
+
+The app uses Supabase Auth with GitHub OAuth integration:
+- Secure user authentication
+- Profile management
+- API key vault for authenticated users
+- Session persistence
+
+## 🌟 Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+### Development Guidelines
+
+1. Follow TypeScript best practices
+2. Use existing UI components from shadcn/ui
+3. Maintain consistent styling with Tailwind CSS
+4. Add proper error handling and loading states
+5. Include appropriate toast notifications for user feedback
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/) for the beautiful UI components
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Supabase](https://supabase.com/) for authentication and database services
+- [Lucide](https://lucide.dev/) for the icon library
+- [Vercel](https://vercel.com/) for hosting and deployment
+
+## 📞 Support
+
+If you have any questions or need help, please:
+- Open an issue on GitHub
+- Check the [Documentation](./src/pages/Documentation.tsx) page
+- Contact us at support@onestopdev.xyz
+
+## 🔗 Links
+
+- [Live Demo](https://onestopdev.vercel.app)
+- [Documentation](https://onestopdev.vercel.app/documentation)
+- [API Hub](https://onestopdev.vercel.app/api-hub)
+- [AI Tools](https://onestopdev.vercel.app/ai-hub)
+- [Developer Perks](https://onestopdev.vercel.app/dev-perks)
+
+---
+
+**Built with ❤️ by the OneStopDev Team**
