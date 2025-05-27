@@ -1,11 +1,13 @@
-
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import type { ChatMessage, ConversationMode } from "@/types/chat";
 
-// Use the new API key - in a production app, this should be in an environment variable 
-// or fetched from a secure backend
-const GEMINI_API_KEY = "AIzaSyAGiTyzr60RTMJqIS5XKdHTgVAJzu1tWIw";
+// Use environment variable for API key
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!GEMINI_API_KEY) {
+  console.error('Missing Gemini API key. Please set VITE_GEMINI_API_KEY in your environment variables.');
+}
 
 // Customizable system prompts for different conversation modes
 const modePrompts = {

@@ -2,11 +2,12 @@
 import { createClient } from '@supabase/supabase-js';
 
 // These env variables must be set in your deployment environment
-const supabaseUrl = 'https://bohwhykdtlepssygofew.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJvaHdoeWtkdGxlcHNzeWdvZmV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE0NDg0NDIsImV4cCI6MjA1NzAyNDQ0Mn0.YSZCNvivA2z76-P17--oxW93aKPjqUfhhqLevWoHj0k';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Missing Supabase URL or Anon Key.');
+  console.error('Missing Supabase environment variables. Please check your .env.local file.');
+  throw new Error('Missing required Supabase configuration. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your environment variables.');
 }
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
@@ -17,5 +18,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   }
 });
 
-// Debug log to verify initialization
-console.log('Supabase client initialized with URL:', supabaseUrl);
+// Debug log to verify initialization (remove in production)
+if (process.env.NODE_ENV === 'development') {
+  console.log('Supabase client initialized successfully');
+}

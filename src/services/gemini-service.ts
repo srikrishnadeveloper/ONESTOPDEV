@@ -1,8 +1,12 @@
-
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
-// Initialize the Google Generative AI with the API key
-const API_KEY = "AIzaSyAA6eFE7KTuMXMYWCMSmyBkT2iEGfJpfkg";
+// Initialize the Google Generative AI with the API key from environment variables
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+
+if (!API_KEY) {
+  console.error('Missing Gemini API key. Please set VITE_GEMINI_API_KEY in your environment variables.');
+}
+
 const MODEL_NAME = "gemini-2.0-flash";
 
 // The system prompt for One Stop Dev assistant

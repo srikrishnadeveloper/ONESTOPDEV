@@ -110,12 +110,25 @@ src/
 
 3. **Environment Setup**
    
-   Create a `.env.local` file in the root directory:
+   Copy the environment template and configure your API keys:
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Edit `.env.local` and add your actual API keys:
    ```env
-   VITE_SUPABASE_URL=your_supabase_url
+   # Supabase Configuration
+   VITE_SUPABASE_URL=your_supabase_project_url
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   
+   # Google Gemini AI Configuration  
    VITE_GEMINI_API_KEY=your_gemini_api_key
    ```
+   
+   **⚠️ Important Security Notes:**
+   - Never commit `.env.local` to version control
+   - Keep your API keys secure and private
+   - Use environment variables in production deployments
 
 4. **Supabase Setup**
    
